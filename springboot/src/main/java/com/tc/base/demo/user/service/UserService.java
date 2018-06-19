@@ -1,6 +1,5 @@
 package com.tc.base.demo.user.service;
 
-import com.github.pagehelper.PageHelper;
 import com.tc.base.demo.user.mapper.UserMapper;
 import com.tc.base.demo.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +25,6 @@ public class UserService {
      * pageSize 每页显示的数据条数
      * */
     public List<User> findAllUser(int pageNum, int pageSize) {
-        //将参数传给这个方法就可以实现物理分页了，非常简单。
-        PageHelper.startPage(pageNum, pageSize);
         return userMapper.selectAllUser();
     }
 }
